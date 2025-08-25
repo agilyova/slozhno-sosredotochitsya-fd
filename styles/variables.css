@@ -1,4 +1,31 @@
-/*
-  Переменные для вашего проекта
-  и их переопределение под различные устройства
-*/
+:root {
+  /*Типографика*/
+  --font-base: 'IBM Plex mono';
+  --font-size-base: 18px;
+  --line-height-base: 1.3;
+  --font-weight-bold: 700;
+  --font-size-brand-title: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+
+  /*Цвета*/
+  --primary-color: #000028;
+  --secondary-color: #f1b2ce;
+  --accent-color: #ff0070;
+  --accent-color-rgb: 255 0 112;
+  --brand-color: #db00ff;
+
+  /*Фон*/
+  --bg-image: url(../images/cover-image-dark.png);
+  --bg-color: var(--primary-color);
+
+  /*Цвета (семантика)*/
+  --brand-title-color: var(--brand-color);
+  --section-title-color: var(--accent-color);
+  --decor-color: var(--accent-color);
+  --menu-color: var(--accent-color);
+  --menu-hover-outline-color: rgb(var(--accent-color-rgb) / 0.4);
+
+  /*Отступы и блоки*/
+  --base-spacing: 10px;
+  --sections-gap: 50px;
+  --min-block-size: 668px;
+}

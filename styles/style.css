@@ -1,5 +1,275 @@
-/* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
-
 .page {
-  /* сохраните в разметке и стилях класс page у тега body. Он удобен, чтобы составлять селекторы для разных цветовых тем. */
+  padding: var(--base-spacing);
+  color: var(--secondary-color, #f1b2ce);
+  font-family: var(--font-base), sans-serif;
+  font-size: var(--font-size-base, 18px);
+  line-height: var(--line-height-base, 1.3);
+  background-color: var(--bg-color, #000028);
+  background-image: var(--bg-image);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% 100%;
+  background-attachment: fixed;
+}
+
+.title-decor {
+  color: var(--primary-color);
+  font-weight: var(--font-weight-bold);
+  font-size: inherit;
+  line-height: inherit;
+  background-color: var(--accent-color);
+}
+
+.decorated-zone {
+  position: relative;
+}
+
+.decorated-zone::before,
+.decorated-zone::after {
+  content: '';
+  position: absolute;
+  border: 1px solid var(--decor-color);
+  inline-size: 25px;
+  block-size: 25px;
+}
+
+.decorated-zone::before {
+  top: 0;
+  right: 0;
+  border-inline-start: none;
+  border-block-end: none;
+}
+
+.decorated-zone::after {
+  bottom: 0;
+  left: 0;
+  border-inline-end: none;
+  border-block-start: none;
+}
+
+.header {
+  display: grid;
+  grid-template-rows: 1fr min-content 1fr;
+  align-items: center;
+  block-size: calc(100dvb - 2 * var(--base-spacing));
+  min-block-size: calc(var(--min-block-size) - 2 * var(--base-spacing));
+}
+
+.brand-title {
+  color: var(--brand-title-color);
+  font-size: var(--font-size-brand-title);
+  line-height: 0.83;
+}
+
+.header__decor-text {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: flex;
+  place-items: center;
+  color: var(--accent-color);
+  line-height: 1.4;
+  text-transform: uppercase;
+}
+
+.header__decor-text::after {
+  content: '';
+  display: inline-block;
+  width: 9px;
+  height: 9px;
+  margin: 0 10px;
+  border-radius: 50%;
+  box-shadow: 0 0 4px 2px var(--accent-color);
+  background-color: var(--accent-color);
+}
+
+.header__theme-menu {
+  justify-self: end;
+}
+
+.header__theme-menu-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.header__theme-menu-button {
+  border: none;
+  padding: 2px 13px;
+  color: var(--menu-color);
+  line-height: 1;
+  text-transform: lowercase;
+  background-color: transparent;
+  cursor: pointer;
+  appearance: none;
+  min-block-size: 26px;
+}
+
+.header__theme-menu-button:hover {
+  outline: 1px solid var(--menu-hover-outline-color);
+}
+
+.header__theme-menu-button:focus-visible {
+  border-block-end: 1px solid var(--menu-color);
+  outline: none;
+}
+
+.header__theme-menu-button_active {
+  outline: 1px solid var(--menu-color);
+  pointer-events: none;
+}
+
+.header__title {
+  text-shadow: 4px 4px var(--accent-color);
+}
+
+.content {
+  margin-block-start: var(--sections-gap);
+  margin-block-end: var(--sections-gap);
+}
+
+.section {
+  display: grid;
+  gap: 19px;
+}
+
+.section:not(:last-of-type) {
+  margin-block-end: var(--sections-gap);
+}
+
+.section__title {
+  color: var(--section-title-color);
+  font-size: inherit;
+  line-height: inherit;
+}
+
+.cards-list {
+  display: grid;
+  gap: 20px;
+}
+
+.card__title {
+  margin-block-end: 10px;
+}
+
+.card__title_type_thin {
+  font-weight: initial;
+}
+
+.card__link {
+  text-decoration: none;
+  text-shadow: 2px 1px var(--accent-color);
+}
+
+.card__link:hover {
+  border-block-end: 1px solid var(--secondary-color);
+}
+
+.card__link:focus-visible {
+  outline: 1px solid var(--secondary-color);
+  outline-offset: 2px;
+}
+
+.gallery {
+  display: grid;
+  gap: var(--base-spacing);
+}
+
+.gallery__image {
+  object-fit: cover;
+  object-position: center;
+  inline-size: 100%;
+  block-size: 100%;
+}
+
+.footer {
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  min-block-size: calc(var(--min-block-size) - 2 * var(--base-spacing));
+  block-size: calc(100dvb - 2 * var(--base-spacing));
+}
+
+.footer__title {
+  text-shadow: 2px 2px var(--accent-color);
+}
+
+@media (width >= 768px) {
+  :root {
+    --base-spacing: 20px;
+    --sections-gap: 79px;
+    --min-block-size: 1024px;
+    --font-size-brand-title: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+  }
+
+  .header__title {
+    position: relative;
+    inset-inline-end: var(--base-spacing);
+  }
+
+  .header__subtitle {
+    justify-self: end;
+    max-inline-size: calc(100vi / 2 - var(--base-spacing));
+  }
+
+  .section {
+    grid-template-columns: 1fr 2fr;
+    gap: var(--base-spacing);
+  }
+
+  .factors .cards-list {
+    grid-column: 1 / -1;
+  }
+
+  .solutions .section__title {
+    grid-row: 1 / 3;
+  }
+
+  .gallery {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .gallery__title {
+    grid-column: 1 / -1;
+  }
+
+  .gallery__image_size_2x1 {
+    grid-column: span 2;
+  }
+
+  .gallery__image_size_1x2 {
+    grid-row: span 2;
+  }
+}
+
+@media (width >= 1024px) {
+  :root {
+    --min-block-size: 768px;
+  }
+
+  .header__theme-menu {
+    justify-self: center;
+    align-self: start;
+  }
+
+  .header__theme-menu-list {
+    flex-direction: initial;
+  }
+
+  .section {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .reasons .cards-list,
+  .solutions .cards-list {
+    grid-column: 2 / -1;
+  }
+
+  .factors .cards-list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .solutions .section__subtitle {
+    grid-column: 2 / -1;
+  }
 }
