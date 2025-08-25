@@ -1,18 +1,18 @@
 :root.theme-dark {
   /*Цвета*/
-  --primary-color: #000028;
-  --secondary-color: #f1b2ce;
-  --accent-color-rgb: 255 0 112;
-  --accent-color: #ff0070;
-  --brand-color: #db00ff;
-
-  /*Текст*/
-  --menu-color: var(--accent-color);
-  --menu-hover-outline-color: rgb(var(--accent-color-rgb) / 0.4);
-  --decor-color: var(--accent-color);
+  --color-background: #000028;
+  --color-brand-title: #db00ff;
+  --color-card-text: #f1b2ce;
+  --color-decor: #ff0070;
+  --color-decor-title: #000028;
+  --color-decor-title-background: #ff0070;
+  --color-menu: #ff0070;
+  --color-menu-outline-hover: rgb(255 0 112 / 0.4);
+  --color-section-title: #ff0070;
+  --color-shadow: #ff0070;
 
   /*Фон*/
-  --bg-image: url(../images/cover-image-dark.png);
+  --image-background: url(../images/cover-image-dark.png);
 }
 
 .theme-dark .header__decor-text {

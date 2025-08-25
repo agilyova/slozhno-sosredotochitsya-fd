@@ -1,19 +1,19 @@
 @media (prefers-color-scheme: light) {
   :root {
     /*Цвета*/
-    --primary-color: #fff1f7;
-    --secondary-color: #353430;
-    --secondary-color-rgb: 53 52 48;
-    --accent-color: #ff8dcb;
-    --brand-color: #ffc2e6;
-
-    /*Текст*/
-    --menu-color: var(--secondary-color);
-    --menu-hover-outline-color: rgb(var(--secondary-color-rgb) / 0.4);
-    --decor-color: var(--secondary-color);
+    --color-background: #fff1f7;
+    --color-brand-title: #ffc2e6;
+    --color-card-text: #353430;
+    --color-decor: #353430;
+    --color-decor-title: #353430;
+    --color-decor-title-background: #ff8dcb;
+    --color-menu: #353430;
+    --color-menu-outline-hover: rgb(53 52 48 / 0.4);
+    --color-section-title: #353430;
+    --color-shadow: #ff8dcb;
 
     /*Фон*/
-    --bg-image: url(../images/cover-image-light.png);
+    --image-background: url(../images/cover-image-light.png);
   }
 
   .header__decor-text {
@@ -23,19 +23,19 @@
 
 :root.theme-light {
   /*Цвета*/
-  --primary-color: #fff1f7;
-  --secondary-color: #353430;
-  --secondary-color-rgb: 53 52 48;
-  --accent-color: #ff8dcb;
-  --brand-color: #ffc2e6;
-
-  /*Текст*/
-  --menu-color: var(--secondary-color);
-  --menu-hover-outline-color: rgb(var(--secondary-color-rgb) / 0.4);
-  --decor-color: var(--secondary-color);
+  --color-background: #fff1f7;
+  --color-brand-title: #ffc2e6;
+  --color-card-text: #353430;
+  --color-decor: #353430;
+  --color-decor-title: #353430;
+  --color-decor-title-background: #ff8dcb;
+  --color-menu: #353430;
+  --color-menu-outline-hover: rgb(53 52 48 / 0.4);
+  --color-section-title: #353430;
+  --color-shadow: #ff8dcb;
 
   /*Фон*/
-  --bg-image: url(../images/cover-image-light.png);
+  --image-background: url(../images/cover-image-light.png);
 }
 
 .theme-light .header__decor-text {
